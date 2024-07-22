@@ -8,7 +8,6 @@ set -e
 
 if [ -z $AWS_DEFAULT_REGION]; then
     echo "AWS_DEFAULT_REGION not set."
-    exit 1
 fi
 
 if [ -z $AWS_ACCESS_KEY_ID]; then
@@ -27,13 +26,12 @@ if [ -z $RESTIC_PASSWORD]; then
     echo "RESTIC_PASSWORD not set."
 fi
 
-if [ -z $AWS_DEFAULT_REGION] || [ -z $AWS_ACCESS_KEY_ID] || [ -z $AWS_SECRET_ACCESS_KEY] || [ -z $RESTIC_REPOSITORY] || [ -z $RESTIC_PASSWORD]; then
-    exit 1
-fi
-
 DIR=$(dirname "$(readlink -f "$0")")
 
 source $DIR/tasks/packages.sh
 source $DIR/tasks/dotfiles.sh
-source $DIR/tasks/restic.sh
 source $DIR/tasks/rust.sh
+
+if [ -n $AWS_DEFAULT_REGION] && [ -n $AWS_ACCESS_KEY_ID] && [ -n $AWS_SECRET_ACCESS_KEY] || [ -n $RESTIC_REPOSITORY] || [ -n $RESTIC_PASSWORD]; then
+    source $DIR/tasks/restic.sh
+fi
