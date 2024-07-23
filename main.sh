@@ -26,17 +26,10 @@ if [ -z $RESTIC_PASSWORD]; then
     echo "RESTIC_PASSWORD not set."
 fi
 
-DIR=$(dirname "$(readlink -f "$0")")
-
-# source $DIR/tasks/packages.sh
-# source $DIR/tasks/dotfiles.sh
-# source $DIR/tasks/rust.sh
-
 source ~/archscript/tasks/packages.sh
 source ~/archscript/tasks/dotfiles.sh
 source ~/archscript/tasks/rust.sh
 
-
-if [ -n $AWS_DEFAULT_REGION] && [ -n $AWS_ACCESS_KEY_ID] && [ -n $AWS_SECRET_ACCESS_KEY] || [ -n $RESTIC_REPOSITORY] || [ -n $RESTIC_PASSWORD]; then
-    source ~/archscript/tasks/restic.sh
-fi
+#if [ -n $AWS_DEFAULT_REGION] && [ -n $AWS_ACCESS_KEY_ID] && [ -n $AWS_SECRET_ACCESS_KEY] || [ -n $RESTIC_REPOSITORY] || [ -n $RESTIC_PASSWORD]; then
+#    source ~/archscript/tasks/restic.sh
+#fi
