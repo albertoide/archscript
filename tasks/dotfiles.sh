@@ -1,13 +1,14 @@
-#eval $(ssh-agent)
-#ssh-add ~/.ssh/id_ed25519
-
-if [ -d "/home/abautista/.dotfiles" ]; then
+if [ -d "$HOME/.dotfiles" ]; then
     rm -rf ~/.dotfiles
 fi
 
 git clone git@github.com:albertoide/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 make all
+
+if [ ! -d "$HOME/.config/nvim" ]; then
+    git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+fi
 
 cat << EOF > ~/.env
 export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION

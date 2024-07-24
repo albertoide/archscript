@@ -1,3 +1,7 @@
+if [ ! -d "~/.config/systemd/user" ]; then
+    mkdir -p ~/.config/systemd/user
+fi
+
 cat << EOF > ~/.config/restic-backup.conf
 AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
 RESTIC_REPOSITORY=$RESTIC_REPOSITORY

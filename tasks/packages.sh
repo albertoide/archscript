@@ -2,10 +2,13 @@ sudo pacman -Syu
 
 sudo pacman -S --noconfirm \
     git \
+    lazygit \
     qtile \
     direnv \
     tree \
     starship \
+    ttf-cascadia-code-nerd \
+    noto-fonts-emoji \
     fzf \
     jq \
     ripgrep \

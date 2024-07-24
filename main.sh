@@ -29,7 +29,4 @@ fi
 source ~/archscript/tasks/packages.sh
 source ~/archscript/tasks/dotfiles.sh
 source ~/archscript/tasks/rust.sh
-
-#if [ -n $AWS_DEFAULT_REGION] && [ -n $AWS_ACCESS_KEY_ID] && [ -n $AWS_SECRET_ACCESS_KEY] || [ -n $RESTIC_REPOSITORY] || [ -n $RESTIC_PASSWORD]; then
-#    source ~/archscript/tasks/restic.sh
-#fi
+source ~/archscript/tasks/restic.sh
