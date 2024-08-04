@@ -2,7 +2,12 @@ sudo pacman -Syu
 
 sudo pacman -S --noconfirm \
     git \
+    breeze-gtk \
+    breeze-icons \
     lazygit \
+    greetd \
+    greetd-tuigreet \
+    kitty \
     qtile \
     direnv \
     tree \
@@ -18,7 +23,10 @@ sudo pacman -S --noconfirm \
     lsd \
     zathura zathura-pdf-poppler \
     rofi \
-    pcmanfm
+    pcmanfm \
+    gvfs \
+    gvfs-mtp \
+    udiskie
 
 if [ -d "/home/abautista/tmp/yay-bin" ]; then
     rm -rf ~/tmp/yay-bin
